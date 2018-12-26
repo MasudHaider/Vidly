@@ -197,6 +197,10 @@
     <Compile Include="Migrations\201812251545348_PopulateMembershipTypesClass.Designer.cs">
       <DependentUpon>201812251545348_PopulateMembershipTypesClass.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201812261313479_OverrideConventionsForCustomer.cs" />
+    <Compile Include="Migrations\201812261313479_OverrideConventionsForCustomer.Designer.cs">
+      <DependentUpon>201812261313479_OverrideConventionsForCustomer.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="Models\Customer.cs" />
@@ -299,6 +303,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201812251545348_PopulateMembershipTypesClass.resx">
       <DependentUpon>201812251545348_PopulateMembershipTypesClass.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201812261313479_OverrideConventionsForCustomer.resx">
+      <DependentUpon>201812261313479_OverrideConventionsForCustomer.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
