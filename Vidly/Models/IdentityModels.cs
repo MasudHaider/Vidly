@@ -37,6 +37,10 @@ namespace Vidly.Models
                 .Property(c => c.Name)
                 .IsRequired()
                 .HasMaxLength(255);
+            modelBuilder.Entity<MembershipType>()
+                .Property(m => m.Name)
+                .IsRequired()
+                .HasMaxLength(255);
             base.OnModelCreating(modelBuilder);
         }
     }
