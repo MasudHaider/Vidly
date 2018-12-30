@@ -2,11 +2,11 @@
 @{
     /**/
 
-    ViewBag.Title = "New";
+    ViewBag.Title = "MovieForm";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>New Customer</h2>
+<h2>MovieForm Customer</h2>
 
 @using (@Html.BeginForm("Save", "Customers"))
 {
@@ -20,10 +20,10 @@
     </div>
     <div class="form-group">
         <label for="MembershipTypeId">Membership Types</label>
-        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MemshipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
+        @Html.DropDownListFor(m => m.Customer.MembershipTypeId, new SelectList(Model.MembershipTypes, "Id", "Name"), "Select Membership Type", new { @class = "form-control" })
     </div>
     <div class="form-check">
-        <label class="form-check-label" for="IsSubscribedToNewsLetter">Subscribed To Newsletter?</label>
+        <label class="form-check-label" for="IsSubscribedToMovieFormsLetter">Subscribed To MovieFormsletter?</label>
         @Html.CheckBoxFor(m => m.Customer.IsSubscribedToNewsLetter)
     </div>
     @Html.HiddenFor(m => m.Customer.Id);
