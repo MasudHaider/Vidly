@@ -36,26 +36,11 @@ namespace Vidly.Models
             return new ApplicationDbContext();
         }
 
-        protected override void OnModelCreating(DbModelBuilder modelBuilder)
-        {
-            modelBuilder.Entity<Customer>()
-                .Property(c => c.Name)
-                .IsRequired()
-                .HasMaxLength(255);
-            modelBuilder.Entity<MembershipType>()
-                .Property(m => m.Name)
-                .IsRequired()
-                .HasMaxLength(255);
-            modelBuilder.Entity<Movie>()
-                .Property(m => m.Name)
-                .IsRequired()
-                .HasMaxLength(255);
-            modelBuilder.Entity<Genre>()
-                .Property(g => g.Name)
-                .IsRequired()
-                .HasMaxLength(255);
+        //protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        //{
+            
 
-            base.OnModelCreating(modelBuilder);
-        }
+        //    base.OnModelCreating(modelBuilder);
+        //}
     }
 }
