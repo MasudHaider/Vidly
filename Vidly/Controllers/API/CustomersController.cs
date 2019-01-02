@@ -26,14 +26,14 @@ namespace Vidly.Controllers.API
         }
 
         //GET /api/customers/1
-        public CustomerDto GetCustomer(int id)
+        public IHttpActionResult GetCustomer(int id)
         {
             var customer = _Context.Customers.SingleOrDefault(c => c.Id == id);
 
-            if(customer == null)
-                throw new HttpResponseException(HttpStatusCode.NotFound);
+            if (customer == null)
+                return NotFound();
 
-            return Mapper.Map<Customer, CustomerDto>(customer) ;
+            return  Ok(Mapper.Map<Customer, CustomerDto>(customer)) ;
         }
 
         //POST /api/customers
