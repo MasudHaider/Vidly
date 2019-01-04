@@ -2,14 +2,25 @@ namespace Vidly.Migrations
 {
     using System;
     using System.Data.Entity.Migrations;
-
+    
     public partial class SeedUsers : DbMigration
     {
         public override void Up()
         {
             Sql(@"
-USE [Vidly]
-GO
+INSERT INTO [dbo].[AspNetUsers]
+           ([Id]
+           ,[Email]
+           ,[EmailConfirmed]
+           ,[PasswordHash]
+           ,[SecurityStamp]
+           ,[PhoneNumber]
+           ,[PhoneNumberConfirmed]
+           ,[TwoFactorEnabled]
+           ,[LockoutEndDateUtc]
+           ,[LockoutEnabled]
+           ,[AccessFailedCount]
+           ,[UserName]) VALUES(N'53f7702d-ce06-4150-80c9-b28f5739c332',	N'guest@vidly.com',	0,	N'AJs1TRxBaw72xIk1PBhSVUVAPwIDFtwfLdhnvsyGLD1UUAq3NUtKj7WKTVxw4SHmDw==',	N'f0a09ff7-bde7-462e-a2a6-f84744587fa1',	NULL,	0,	0,	NULL,	1,	0,	N'guest@vidly.com')
 
 INSERT INTO [dbo].[AspNetUsers]
            ([Id]
@@ -23,31 +34,19 @@ INSERT INTO [dbo].[AspNetUsers]
            ,[LockoutEndDateUtc]
            ,[LockoutEnabled]
            ,[AccessFailedCount]
-           ,[UserName])
-     VALUES(
-N'a641c1c0-61bf-4e0e-8e59-9765f3455c55',N'guest@vidly.com',0,N'ADLp2dIzA1cSoleYeQ8GP+fZaiRNcZF7OyEp3EllWw/p6WGhIhHXenxYu/GM135s6g==',N'1a392f35-065a-4fa4-8151-1d4b4017368e',NULL,0,0,NULL,1,0,N'guest@vidly.com')
-INSERT INTO [dbo].[AspNetUsers]
+           ,[UserName]) VALUES(N'9876eec8-283c-41b7-a22a-cfc506385b4e',	N'admin@vidly.com',	0,	N'ABVyYwaVYhYtMwohON9GSR5tUQOMFzcSwf8UO0vKlyxyWB/V0MQp9yuwSFKiNHxy6g==',	N'9dd335dc-b6a3-409c-a21c-802dd2f68d92',	NULL,	0,	0,	NULL,	1,	0,	N'admin@vidly.com')
+
+INSERT INTO [dbo].[AspNetRoles]
            ([Id]
-           ,[Email]
-           ,[EmailConfirmed]
-           ,[PasswordHash]
-           ,[SecurityStamp]
-           ,[PhoneNumber]
-           ,[PhoneNumberConfirmed]
-           ,[TwoFactorEnabled]
-           ,[LockoutEndDateUtc]
-           ,[LockoutEnabled]
-           ,[AccessFailedCount]
-           ,[UserName])
-     VALUES(N'c6044a93-c718-41ae-97f5-9534c3b11bfe',N'admin@vidly.com',	0,	N'AJ8Q+nY0Yvozgjue7VViXuU6w7b8CATk6dc0oeqm3WbmSkgLxrpoCppjyTOpfxuxTg==',	N'b44b2b60-5fae-41fc-83c7-c3db4855e9c8',	NULL,	0,	0,	NULL,	1,	0,	N'admin@vidly.com')
+           ,[Name]) VALUES(N'94bac008-548c-465e-baf3-ecd490559d07',	N'CanManageMovies')
 
-INSERT INTO [dbo].[AspNetRoles]([Id],[Name]) VALUES(N'69d9f008-b9ce-43c4-aa50-69ab2805b0ac', N'CanManageMovies')
-
-INSERT INTO [dbo].[AspNetUserRoles]([UserId],[RoleId]) VALUES(N'c6044a93-c718-41ae-97f5-9534c3b11bfe',N'69d9f008-b9ce-43c4-aa50-69ab2805b0ac')
+INSERT INTO [dbo].[AspNetUserRoles]
+           ([UserId]
+           ,[RoleId]) VALUES(N'9876eec8-283c-41b7-a22a-cfc506385b4e',	N'94bac008-548c-465e-baf3-ecd490559d07')
 
 ");
         }
-
+        
         public override void Down()
         {
         }
