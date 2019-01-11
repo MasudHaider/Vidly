@@ -32,6 +32,8 @@ namespace Vidly.Models
         [Required(ErrorMessage = "Please Enter Number of Movies That You Want")]
         [Range(1,20)]
         public byte NumberInStock { get; set; }
+
+        public byte NumberAvailable { get; set; }
         
     }
 }
