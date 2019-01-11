@@ -15,6 +15,11 @@ namespace Vidly.Controllers.API
     {
         public ApplicationDbContext _Context;
 
+        public NewRentalsController()
+        {
+            _Context = new ApplicationDbContext();
+        }
+
         [HttpPost]
         public IHttpActionResult CreateNewRentals(NewRentalDto newRentalDto)
         {
@@ -28,7 +33,9 @@ namespace Vidly.Controllers.API
             {
                 if (movie.NumberAvailable == 0)
                     return BadRequest("Movie is not available");
+
                 movie.NumberAvailable--;
+
                 var rental = new Rental
                 {
                     Customer = customersInDb,

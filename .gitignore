@@ -260,3 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 excercise_4_error.JPG
+Vidly/App_Start/Startup.Auth.cs
